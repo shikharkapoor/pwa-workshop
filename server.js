@@ -16,6 +16,13 @@ app.engine('.hbs', hbs({
 }));
 
 var inlineStyles = fs.readFileSync(path.resolve(__dirname) + '/public/styles/shell-styles.css', 'utf8');
+
+app.get('/manifest.json', function(req, res) {
+	res.set('Content-Type', 'application/json');
+	res.end(fs.readFileSync(path.resolve(__dirname) + 'manifest.json', 'utf8'));
+});
+
+
 app.get('/', function (req, res) {
 	var templateVars = {
 		'inlineStyles': inlineStyles
