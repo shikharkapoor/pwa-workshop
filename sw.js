@@ -4,7 +4,7 @@ var err = console.error.bind(console);
 var CACHE_NAME = 'pwa-demo-cache-v1';
 var urlsToCache = [
 	'/',
-	'/public/css/styles.css',
+	'/public/styles/styles.css',
 	'/public/js/app.js',
 	new Request('https://www.reddit.com/.json')
 ];
