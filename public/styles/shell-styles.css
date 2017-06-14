@@ -31,3 +31,9 @@ body {
 	height: 15px;
 	background-color: #efefef;
 }
+#offline-status-container{
+	display: none;
+	padding: 15px 25px;
+	background-color: red;
+	color: white;
+}

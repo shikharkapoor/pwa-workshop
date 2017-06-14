@@ -1,3 +1,11 @@
+function handleOnlineStatus() {
+	if (navigator.onLine) {
+		document.getElementById('offline-status-container').style.display = "none";
+	} else {
+		document.getElementById('offline-status-container').style.display = "block";
+	}
+}
+
 (function(){
 	fetch('https://www.reddit.com/.json', {
 		method: 'get'
@@ -18,4 +26,12 @@
 	}).catch(function(err) {
 		console.log(err);
 	});
+
+	//Handle offline
+	window.addEventListener('load', function(){
+		window.addEventListener('online',  handleOnlineStatus);
+		window.addEventListener('offline', handleOnlineStatus);
+	});
+	handleOnlineStatus();
 })();
+
