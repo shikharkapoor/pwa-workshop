@@ -22,6 +22,10 @@ app.get('/manifest.json', function(req, res) {
 	res.end(fs.readFileSync(path.resolve(__dirname) + 'manifest.json', 'utf8'));
 });
 
+app.get('/sw.js', function (req, res) {
+	res.set('Content-Type', 'application/javascript');
+	res.end(fs.readFileSync(path.resolve(__dirname) + 'sw.js', 'utf8'));
+});
 
 app.get('/', function (req, res) {
 	var templateVars = {
