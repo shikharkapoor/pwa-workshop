@@ -6,6 +6,7 @@
 	<title>PWA Demo App</title>
 	<link rel="stylesheet" href="/public/styles/shell-styles.css"/>
 	<link rel="manifest" href="./manifest.json">
+	<link rel="stylesheet" href="/public/styles/styles.css"/>
 </head>
 <body>
 	<div class="content">
@@ -21,7 +22,20 @@
 			</div>
 		</div>
 	</div>
-	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script src="/public/js/app.js"></script>
+	<script id="posts-template" type="x-handlebars-template">
+		<div class="loaded-content">
+			\{{#each posts}}
+			<div class="post-container">
+				<div class="post-title">
+					<a href="https://www.reddit.com\{{this.data.permalink}}">\{{this.data.title}}</a>
+				</div>
+				Author: <span class="post-author">\{{this.data.author}} </span>
+			</div>
+			\{{/each}}
+		</div>
+	</script>
 	<script>
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker.register('/sw.js').then(function(registration) {
@@ -33,4 +47,5 @@
 			});
 		}
 	</script>
+</body>
 </html>
