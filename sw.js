@@ -6,7 +6,7 @@ var urlsToCache = [
 	'/',
 	'/public/styles/styles.css',
 	'/public/js/app.js',
-	new Request('https://www.reddit.com/.json')
+	'https://www.reddit.com/.json'
 ];
 
 self.addEventListener('install',function(event) {
