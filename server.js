@@ -8,6 +8,11 @@ var port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname)));
 
+app.get('/manifest.json', function(req, res) {
+	res.set('Content-Type', 'application/json');
+	res.end(fs.readFileSync(path.resolve(__dirname) + 'manifest.json', 'utf8'));
+});
+
 app.get('/', function (req, res) {
 	res.type('html').sendFile(path.join(__dirname, '/public/') + 'index.html');
 });
