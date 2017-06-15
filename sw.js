@@ -23,5 +23,6 @@ self.addEventListener('activate',function() {
 });
 
 toolbox.router.get('*.json', toolbox.cacheFirst, {
-	origin: 'https://www.reddit.com'
+	origin: 'https://www.reddit.com',
+	maxAgeSeconds: 43200
 });
