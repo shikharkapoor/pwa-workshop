@@ -14,6 +14,8 @@
 		var source   = document.getElementById('posts-template').innerHTML;
 		var template = Handlebars.compile(source);
 		var html = template(redditPosts);
+		console.log(html);
+
 		document.getElementById('post-content').innerHTML = html;
 	}).catch(function(err) {
 		console.log(err);
